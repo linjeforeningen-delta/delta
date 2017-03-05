@@ -4,11 +4,6 @@
   @if(have_posts()) <?php the_post(); ?>
   <div class="seksjon seksjon--bg" style="background-image: url( {{ the_post_thumbnail_url( 'full' ) }} )">
   </div>
-  <div class="seksjon">
-    <div class="seksjon__holder">
-      {!! the_content() !!}
-    </div>
-  </div>
   <div class="seksjon seksjon--gronn">
     <div class="seksjon__holder">
       <h1>Bedriftspresentasjoner</h1>
