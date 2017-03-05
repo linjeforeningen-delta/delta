@@ -8,7 +8,9 @@
     @include ('partials.content-bedpress')
   @endwhile
   @else
-  <h3>Vi har foreløpig ingen planlagte bedriftspresentasjoner</h3>
-  <p>Følg med på denne siden og vår facebook side for oppdateringer</p>
+  <div class="bedriftspresentasjoner__tekst">
+    <h3>Vi har foreløpig ingen planlagte bedriftspresentasjoner</h3>
+    <p>Følg med på denne siden og vår facebook side for oppdateringer</p>
+  </div>
   @endif
   </div>

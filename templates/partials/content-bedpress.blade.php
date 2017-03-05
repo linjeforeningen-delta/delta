@@ -5,7 +5,7 @@
     <a href="{{ get_permalink() }}">@php(the_post_thumbnail( null, 'full' ))</a>
     </div> 
     <a href="{{ get_permalink() }}"><h3>{{ get_the_title() }}</h3></a>
-    <time class="bedpress__tidspunkt" datetime="{{ get_field('tidspunkt') }}">{{ date('d. F Y',strtotime(get_field('tidspunkt'))) }}</time>
+    <time class="bedpress__tidspunkt" datetime="{{ get_field('tidspunkt') }}">{{ date_i18n('d. F Y',strtotime(get_field('tidspunkt'))) }}</time>
   </header>
   <div>
     @php(the_excerpt())

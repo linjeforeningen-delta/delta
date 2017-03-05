@@ -1,6 +1,6 @@
 .bunntekst{
   background: $gronn;
-  padding: 0 0 20px;
+  padding: 0 0 40px;
   color: #fff;
   @media (max-width: $mobil){
     padding-bottom: 100px;
@@ -36,6 +36,10 @@
     p{
       font-size: 16px;
       line-height: 24px;
+      margin-bottom: 0;
+    }
+    h3{
+      margin-top: 0;
     }
   }
   &__sosialt{
@@ -43,9 +47,9 @@
     flex-wrap: wrap;
     a{
       @extend .fa;
-      font-size: 40px;
+      font-size: 38px;
       display: block;
-      padding: 10px;
+      padding: 15px 20px;
       span{
         display: none;
       }
@@ -95,4 +99,16 @@
       clear: both;
     }
   }
+}
+.wdi_feed_container,
+.wdi_feed_wrapper,
+.wdi_photo_wrap_inner{
+  background: transparent !important;
+  border: none !important;
+}
+.wdi_photo_wrap_inner{
+  padding: 5px;
+}
+.wdi_load_more,  .wdi_spinner{
+  display: none !important;
 }

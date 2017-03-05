@@ -60,16 +60,40 @@ export default {
         }
       });
     }
-
-    document.querySelector('.mobilmeny').addEventListener('click', function(event){
-      event.preventDefault();
-      scroller.topptekst.className = "topptekst__navigasjon topptekst__navigasjon--full";
-    });
-    document.querySelector('.topptekst__navigasjon__lukk').addEventListener('click', function(event){
-      event.preventDefault();
-      scroller.topptekst.className = "topptekst__navigasjon";
-    });
-
+    var mobilmeny = document.querySelector('.mobilmeny');
+    if(mobilmeny){
+        mobilmeny.addEventListener('click', function(event){
+        event.preventDefault();
+        scroller.topptekst.className = "topptekst__navigasjon topptekst__navigasjon--full";
+      });
+    }
+    var lukkKnapp = document.querySelector('.topptekst__navigasjon__lukk');
+    if(lukkKnapp){
+      document.querySelector('.topptekst__navigasjon__lukk').addEventListener('click', function(event){
+        event.preventDefault();
+        scroller.topptekst.className = "topptekst__navigasjon";
+      });
+    }
+    var trekkspill = document.querySelectorAll('.trekkspill');
+    for(var i = 0; i < trekkspill.length; i++){
+      var enkelte = trekkspill[i].querySelectorAll('.trekkspill__enkelt');
+      for(var j = 0; j < enkelte.length; j++){
+        enkelte[j].addEventListener('click', function(){
+          var aktiv = false;
+          console.log(this.className.indexOf('trekkspill__enkelt--aktiv'));
+          if(this.className.indexOf('trekkspill__enkelt--aktiv') != -1){
+            aktiv = true;
+          }
+          var andre = this.parentNode.querySelectorAll('.trekkspill__enkelt--aktiv');
+          for(var k = 0; k < andre.length; k++){
+            andre[k].className = "trekkspill__enkelt";
+          }
+          if(!aktiv){
+            this.className = "trekkspill__enkelt trekkspill__enkelt--aktiv"; 
+          }
+        });
+      }
+    }
 
   },
 };

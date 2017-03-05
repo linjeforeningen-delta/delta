@@ -6,6 +6,11 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
+    @if(has_post_thumbnail())
+    <div class="toppbilde">
+      {!! get_the_post_thumbnail( null, 'toppbilde' ) !!}
+    </div>
+    @endif
     <div class="seksjon">
       <div class="seksjon__holder">
         <hgroup>

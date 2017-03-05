@@ -6,7 +6,7 @@
   </div>
   <div class="seksjon seksjon--gronn">
     <div class="seksjon__holder">
-      <h1>Bedriftspresentasjoner</h1>
+      <h1>Bedrifts- og forskningspresentasjoner</h1>
       @include('partials.bedriftspresentasjoner')
     </div>
   </div>

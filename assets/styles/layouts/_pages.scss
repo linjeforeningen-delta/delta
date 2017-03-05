@@ -508,9 +508,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   &__ikon{
-    display: block;
+    display: block !important;
     margin: 10px auto 20px;
-    font-size: 42px;
+    font-size: 42px !important;
     text-align: center;
   }
   a{
@@ -798,7 +798,6 @@
       max-height: 0;
       transition: .6s all ease-in-out;
     }
-    &:hover,
     &--aktiv{
       .trekkspill__enkelt{
         &__innhold{

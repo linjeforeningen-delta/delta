@@ -27,7 +27,7 @@
       @endwhile
     @endif
     @if(have_rows('tidligere_styre'))
-    <?php $halvveis = count( get_field('repeater_field') ) / 2; $i = 0; ?>
+    <?php $halvveis = count( get_field('tidligere_styre') ) / 2; $i = 0; ?>
       <section class="seksjon">
         <div class="seksjon__holder">
           <h2>{{get_field('overskrift_tidligere') }}</h2>
@@ -47,7 +47,7 @@
                 </div>
               </div>
             </div>
-            @if($i > $halvveis)
+            @if($i >= $halvveis-1)
             <?php $i = 0; ?>
             </div>
             <div class="trekkspill trekkspill--andre">

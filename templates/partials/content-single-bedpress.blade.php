@@ -28,6 +28,9 @@
       <div class="infoboks__trinn">
         <span> {{ $bedpress->printTrinn() }}</span>
         <span>
+        @if($bedpress->forStudieretning('andre'))
+          Åpent for alle!
+        @else
         @if($bedpress->forStudieretning('matematikk'))
           Matematikk 
         @else
@@ -42,6 +45,7 @@
           Fysikk
         @else
           <span class="infoboks__trinn--skjul">Fysikk</span>
+        @endif
         @endif
         </span>
       </div>
@@ -71,7 +75,11 @@
   <header>
     <hgroup>
       <h1>{{ get_the_title() }}</h1>
-      <h2>Bedriftspresentasjon</h2>
+      @if(get_field('er_bedpress'))
+        <h2>Bedriftspresentasjon</h2>
+      @else
+        <h2>Presentasjon</h2>
+      @endif
     </hgroup>
   </header>
   <div>

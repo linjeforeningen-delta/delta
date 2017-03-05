@@ -16,8 +16,17 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('mazemap.css', 'https://api.mazemap.com/js/v1.2.9/mazemap.min.css', false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
     wp_enqueue_script('sage/main.js', 'https://api.mazemap.com/js/v1.2.9/mazemap.min.js', [], null, false);
-
 }, 100);
+add_action('wp_enqueue_scripts', function () {
+    wp_deregister_style('font-awesome');
+    wp_deregister_style('font-awesome-css');
+}, 1000);
+
+if( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_page('Delta');
+
+}
 
 /**
  * Theme setup

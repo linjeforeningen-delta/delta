@@ -93,7 +93,8 @@
             },
             "choices": {
                 "matematikk": "Matematikk",
-                "fysikk": "Fysikk"
+                "fysikk": "Fysikk",
+                "andre": "Andre"
             },
             "default_value": [],
             "allow_null": 0,
@@ -147,6 +148,25 @@
             "role": "",
             "allow_null": 1,
             "multiple": 1
+        },
+        {
+            "key": "field_58bc39676126e",
+            "label": "Er bedpress",
+            "name": "er_bedpress",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -166,5 +186,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488040949
+    "modified": 1488730482
 }

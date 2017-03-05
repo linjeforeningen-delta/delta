@@ -72,6 +72,7 @@ function wooc_extra_register_fields() {
     <select name="studieretning" id="reg_studieretning">
       <option value="matematikk" <?php if( ! empty( $_POST['studieretning'] ) && esc_attr( $_POST['studieretning'] )  == "matematikk" ) echo ' selected="selected"' ?>>Matematikk</option>
       <option value="fysikk" <?php if( ! empty( $_POST['studieretning'] ) && esc_attr( $_POST['studieretning'] )  == "fysikk" ) echo ' selected="selected"' ?>>Fysikk</option>
+      <option value="annet" <?php if( ! empty( $_POST['studieretning'] ) && esc_attr( $_POST['studieretning'] )  == "annet" ) echo ' selected="selected"' ?>>Annet</option>
     </select>
     </p>
 
@@ -89,7 +90,7 @@ function wooc_validate_extra_register_fields( $errors, $username, $email ) {
     if ( isset( $_POST['kull'] ) && empty( $_POST['kull'] ) ) {
         $errors->add( 'kull_error', __( '<strong>Error</strong>: Kull er påkrevd.', 'woocommerce' ) );
     }
-    if ( isset( $_POST['studieretning'] ) && (empty( $_POST['studieretning'] ) || !in_array($_POST['studieretning'], ['matematikk', 'fysikk'])) ) {
+    if ( isset( $_POST['studieretning'] ) && (empty( $_POST['studieretning'] ) || !in_array($_POST['studieretning'], ['matematikk', 'fysikk', 'annet'])) ) {
         $errors->add( 'studieretning_error', __( '<strong>Error</strong>: Studieretning er påkrevd.', 'woocommerce' ) );
     }
     return $errors;
@@ -122,6 +123,7 @@ function fb_add_custom_user_profile_fields( $user ) {
         <select name="studieretning" id="studieretning">
           <option value="matematikk" <?php if( esc_attr( get_the_author_meta( 'studieretning', $user->ID ) )  == "matematikk" ) echo ' selected="selected"' ?>>Matematikk</option>
           <option value="fysikk" <?php if( esc_attr( get_the_author_meta( 'studieretning', $user->ID ) )  == "fysikk" ) echo ' selected="selected"' ?>>Fysikk</option>
+          <option value="annet" <?php if( esc_attr( get_the_author_meta( 'studieretning', $user->ID ) )  == "annet" ) echo ' selected="selected"' ?>>Annet</option>
         </select>
       </td>
     </tr>
