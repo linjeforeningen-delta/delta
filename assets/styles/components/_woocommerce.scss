@@ -1,0 +1,121 @@
+.woocommerce-message{
+  border-top: none;
+  border-bottom: 2px solid $gronn;
+  background: #fff;
+  line-height: 40px;
+  &::before{
+    color: $gronn;
+  }
+  a,
+  a.button{
+    @extend .knapp;
+    border-radius: 0 !important;
+    &:hover{
+      background: #fff !important;
+      color: $gronn !important;
+    }
+  }
+}
+
+.woocommerce{
+  .cart{
+    .button,
+    input.button{
+      @extend .knapp;
+      border-radius: 0;
+      &[disabled],
+      :disabled,
+      :disabled[disabled]{
+        color: #fff;
+      }
+    }
+  }
+  form{
+    .form-row{
+      input.input-text,
+      .select2-container .select2-choice,
+      select,
+      textarea{
+          padding: 6px 12px;
+          border: 2px solid #000;
+          font-size: 16px;
+      }
+      input{
+        &[type="tel"]{
+          width: 100%;
+        }
+      }
+      select{
+        background: transparent;
+        border-radius: 0;
+        line-height: 28px;
+      }
+      .select2-container .select2-choice{
+        border-radius: 0;
+        line-height: 20px;
+      }
+      &.woocommerce-validated{
+        input.input-text,
+        .select2-container .select2-choice,
+        textarea{
+          border-color: $gronn;
+        }
+        label{
+          color: $gronn; 
+        }
+      }
+      &.woocommerce-invalid{
+        input.input-text,
+        .select2-container .select2-choice,
+        textarea{
+          border-color: red;
+        }
+        label{
+          color: red; 
+        }
+      }
+    }
+  }
+  .woocommerce-checkout{
+    #payment{
+      background: #fff;
+      border: 2px solid $gronn;
+      border-radius: 0;
+      div{
+        &.payment_box{
+          background: $gronn;
+          color: #fff;
+          &::before{
+            border-bottom-color: $gronn;
+          }
+        }
+      }
+      ul.payment_methods{
+        border-bottom: 2px solid $gronn;
+      }
+      #place_order{
+        @extend .knapp;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.woocommerce-cart,
+#add_payment_method,
+.woocommerce-checkout{
+  .wc-proceed-to-checkout{
+    a{
+      &.checkout-button{
+        @extend .knapp;
+        border-radius: 0;
+      }
+    }
+  }
+}
+.woocommerce-info{
+  border-color: $gronn;
+  &::before{
+    color: $gronn;
+  }
+}

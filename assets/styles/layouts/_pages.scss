@@ -1,0 +1,788 @@
+.hvit_boks{
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #333;
+  img{
+    width: auto;
+    height: auto;
+    max-width: 95%;
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+  footer{
+    text-align: right;
+    a{
+      @extend .knapp;
+    }
+  }
+}
+.toppbilde{
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.seksjon{
+  padding: 60px 0;
+  clear: both;
+  &::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+  }
+  @media screen and (min-width: $mobil){
+    padding: 80px 0;
+  }
+  &--gronn{
+    background: $gronn;
+    color: #fff;
+    .seksjon__lenke a{
+      @extend .knapp-invers;
+    }
+    .tekst{
+      a{
+        color: #fff;
+      }
+    }
+  }
+  &--gronn-topp{
+    border-top: 2px solid $gronn;
+  }
+  &--bg{
+    background: 50% 50% no-repeat;
+    background-size: cover;
+    position: relative;
+    filter: grayscale(1);
+    min-height: 250px;
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,.3);
+      z-index: 25;
+    }
+  }
+  &--bilde{
+    padding: 0;
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &--infofelt{
+    padding-top: 30px;
+  }
+  &--medkom{
+    background: $gronn;
+    color: #fff;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    padding: 20px;
+    span{
+      font-style: italic;
+    }
+    h1{
+      font-size: 250px;
+      line-height: 250px;
+      margin: 0 !important;
+    }
+  }
+  &__medkomholder{
+    border: 10px solid #fff;
+    padding: 60px 0;
+  }
+  &__holder{
+    position: relative;
+    z-index: 50;
+    @extend .holder;
+    > h1{
+      margin-bottom: 60px;
+    }
+  }
+  &__lenke{
+    text-align: right;
+    margin-top: 40px;
+    a{
+      @extend .knapp;
+    }
+  }
+  &__overtekst{
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+}
+
+.tekst{
+  a{
+    color: $gronn;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    &.full{
+      width: 100%;
+    }
+  }
+  iframe{
+    max-width: 100%;
+  }
+}
+.bedriftspresentasjoner{
+  @media screen and (min-width: $mobil){
+    display: flex;
+    justify-content: space-between;
+    article{
+      width: 30%;
+      width: calc((100% - 40px) / 3);
+    }
+  }
+  &__logo{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  article{
+    &.bedpress--tom{
+      background: $mork;
+      color: $lys;
+    }
+    @extend .hvit_boks;
+  }
+}
+
+.bedpress{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  header{
+  }
+  &__kart{
+    iframe{
+      width: 100%;
+      height: 300px;
+      border: none !important;
+
+      @media screen and (min-width: 300px){
+        height: 450px;
+      }
+    }
+  }
+}
+.sideboks{
+  border: 2px solid $gronn;
+  img{
+    max-width: 90%;
+    max-width: calc(100% - 30px);
+    max-height: 150px;
+    width: auto;
+    height: auto; 
+    display: block;
+    margin: 15px auto;
+  }
+  @media screen and (min-width: $mobil){
+    width: 30%;
+    float: right;
+    margin-left: 25px;
+  }
+}
+.infoboks{
+  background: $gronn;
+  padding: 20px 15px;
+  color: #fff;
+  &__sted,
+  &__dato,
+  &__tidspunkt,
+  &__plasser,
+  &__trinn,
+  &__fagkode,
+  &__lagerstatus,
+  &__pris,
+  &__kleskode,
+  &__teller{
+    @extend .fa;
+    font-size: 1.4rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    span, time{
+      font-family: "Arial";
+    }
+    &::before{
+      width: 30px;
+      display: inline-block;
+      text-align: center;
+      padding-right: 5px;
+    }
+    p{
+      margin: 0;
+      color: #fff;
+    }
+  }
+  &__sted{
+    @extend .fa-map-marker;
+  }
+  &__dato{
+    @extend .fa-calendar;
+  }
+  &__tidspunkt{
+    @extend .fa-clock-o;
+  }
+  &__fagkode{
+    @extend .fa-book;
+  }
+  &__kleskode{
+    @extend .fa-tags;
+  }
+  &__teller{
+    @extend .fa-users;
+  }
+  &__lagerstatus{
+    @extend .fa-print;
+    p.stock{
+      color: #fff !important;
+      margin: 0 !important;
+      font-size: 1em !important;
+      display: inline;
+    }
+  }
+  &__pris{
+    @extend .fa-money;
+    &__forklaring{
+      font-size: 15px;
+      padding-left: 40px;
+    }
+  }
+  &__plasser{
+    @extend .fa-group;
+    span{
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    progress{
+      -webkit-appearance: none;
+       appearance: none;
+      width: 100%;
+      height: 25px;
+      position: relative;
+      &::before {
+        content: attr(value) '/' attr(max) ' fylt opp';
+        display: inline-block;
+        position: absolute;
+        top: 0; 
+        left: 10px;
+        line-height: 25px;
+        font-size: 16px;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+      }
+
+      &::-webkit-progress-value{
+        background: $mork;
+      }
+      &::-webkit-progress-bar{
+        background: $lys;
+      }
+    }
+  }
+  &__trinn{
+    @extend .fa-signal;
+    > span:first-child{
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    > span:last-child{
+      display: inline-block;
+      padding-left: 35px;
+    }
+    &--skjul{
+      color: $lys;
+    }
+  }
+  &__knapp{
+    text-align: center;
+    padding: 20px 0 0;
+    a, button, input[type="submit"]{
+      @extend .knapp-hvit-gronn;
+      font-size: 16px;
+      &[disabled],
+      &:disabled,
+      &[disabled="disabled"]{
+        opacity: .6;
+        cursor: initial;
+      }
+    }
+    .quantity{
+      display: none !important;
+    }
+  }
+}
+
+.kompendier{
+  img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  .arkiv__kompendie{
+    margin-bottom: 20px;
+  }
+  a{
+    position: relative;
+    display: block;
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      transition: .3s all ease-in-out;
+    }
+    &:hover, &:focus, &:active{
+      &::before{
+        background: rgba(0,82,0,.3)
+      }
+    }
+  }
+  @media screen and (min-width: $mobil){
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+    > div{
+      margin: 0 15px 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+.arkiv__kompendie{
+  span{
+    margin-top: 10px;
+    font-size: 18px;
+    display: inline-block;
+  }
+}
+.arkivside{
+  @media screen and (min-width: $mobil){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -20px;
+  }
+}
+
+.arkiv{
+  &--wrap{
+    flex-wrap: wrap;
+  }
+  &--invers{
+    article{
+      border: 2px solid $gronn;
+    }
+  }
+  article{
+    @extend .hvit_boks;
+  }
+  @media screen and (min-width: $mobil){
+    display: flex;
+    justify-content: space-between;
+    article{
+      width: 30%;
+      width: calc((100% - 40px) / 3);
+      display: flex;
+      flex-direction: column;
+      .innhold{
+        flex-grow: 1;
+      }
+    }
+  }
+}
+.samarbeidspartnere{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: $mobil){
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  img{
+    display: block;
+    height: auto;
+    margin-bottom: 20px;
+    width: 60%;
+    @media(min-width: $mobil){
+      max-width: 100%;
+      max-height: 60px;
+      width: auto;
+    }
+  }
+  .realfagsdagene{
+      display: block;
+      max-height: 100%;
+      margin: 60px 0 0;
+      width: 100%;
+      height: auto;
+      @media(min-width: $mobil){
+        width: auto;
+        margin: 60px 20% 0;
+        max-width: 60%;
+      }
+  }
+}
+.styremedlem{
+  aside{
+    img{
+      width: 100%;
+      height: auto;
+    }
+    a{
+      @extend .fa;
+      @extend .fa-envelope;
+      color: $gronn;
+      display: block;
+      margin-top: 5px;
+      padding: 0 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      &::before{
+        color: $gronn;
+      }
+      span{
+        margin-left: 10px;
+        font-family: "Arial", sans-serif;
+      }
+    }
+  }
+  .innhold{
+
+  }
+  @media screen and (min-width: $mobil){
+    display: flex;
+    aside{
+      width: 290px;
+      img{
+        width: 290px;
+      }
+    }
+    .innhold{
+      margin-left: 20px;
+    }
+    h2{
+      margin-top: 0;
+    }
+  }
+}
+.oversikt{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__ikon{
+    display: block;
+    margin: 10px auto 20px;
+    font-size: 42px;
+    text-align: center;
+  }
+  a{
+    background: $gronn;
+    padding: 20px;
+    color: #fff;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: .3s all ease-in-out;
+    &:hover, &:focus{
+      background: $mork;
+    }
+    h3{
+      font-size: 26px;
+      margin: 0;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    @media screen and (min-width: $mobil){
+      width: 45%;
+      width: calc((100% - 20px) / 2);
+    }
+    @media screen and (min-width: $desktop){
+      width: 30%;
+      width: calc((100% - 40px) / 3);
+    }
+
+  }
+}
+
+.produkter{
+  @media screen and (min-width: $mobil){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 -10px;
+  }
+  &__produkt{
+    border: 2px solid $gronn;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    img{
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    &__bilde{
+      height: 200px;
+      display: flex;
+    }
+    header{
+
+      h3{
+        margin: 0;
+      }
+      h4{
+        margin: 0;
+      }
+    }
+    &__tekst{
+
+    }
+    @media screen and (min-width: $mobil){
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 45%;
+      width: calc((100% - 40px) / 2);
+      display: flex;
+      flex-direction: column;
+      &__tekst{
+        flex-grow: 1;
+      }
+    }
+    @media screen and (min-width: $desktop){
+      width: 30%;
+      width: calc((100% - 60px) / 3);
+    }
+  }
+  footer{
+    .stock{
+      @extend .fa;
+      @extend .fa-cubes;
+      font-family: "Arial", sans-serif;
+      font-size: 18px;
+      &::before{
+        @extend .fa;
+        margin-right: 10px;
+        color: $gronn;
+      }
+    }
+    .quantity{
+      display: inline-block;
+      input{
+        border: 2px solid $gronn;
+        height: 36px;
+        font-size: 20px;
+      }
+    }
+    .cart{
+      &::after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+    .single_variation_wrap .variations_button button.single_add_to_cart_button,
+    .cart button.single_add_to_cart_button{
+      @extend .knapp;
+      display: inline-block;
+      background: $gronn;
+      border-radius: 0;
+      float: right;
+      &:hover, &:active{
+        background: #fff;
+        color: $gronn;
+      }
+    }
+  }
+}
+.variations{
+  width: 100%;
+  margin-bottom: 20px;
+  .reset_variations{
+    display: none;
+  }
+  .label,
+  .value{
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+  .value{
+    width: 60%;
+    padding-left: 20px;
+  }
+  select{
+    width: 100%;
+    border: 2px solid $gronn;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 0;
+    -webkit-appearance: none;
+    padding: 4px 8px;
+  }
+}
+.trippel{
+  @media (min-width: $mobil){
+    display: flex;
+    margin: 0 -20px;
+  }
+  &__enkel{
+    margin-bottom: 20px;
+    @media (min-width: $mobil){
+      width: 30%;
+      width: calc((100% / 3) - 40px);
+      margin: 0 20px 20px;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    &--video{
+      &::before{
+        content: none;
+        display: none;
+      }
+    }
+    h3{
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    a{
+      display: block;
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        transition: .3s all ease-in-out;
+        position: absolute;
+      }
+      &:hover::before{
+        background: rgba(0,82,0,.3);
+      }
+    }
+    &__video{
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+      iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.arrangement{
+  &--enkelt{
+    background: #fff;
+    border: 2px solid $gronn;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #000;
+    @media (min-width: $mobil){
+      width: 30%;
+      width: calc((100% / 3) - 20px);
+      margin: 10px;
+    }
+    header{
+      img{
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      h3{
+        font-size: 22px;
+        margin: 10px 0 0;
+        padding: 0;
+      }
+      a{
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    footer{
+      text-align: right;
+      padding-top: 20px;
+      a{
+        @extend .knapp;
+      }
+    }
+  }
+}
+.infofelt{
+  background: $gronn;
+  padding: 15px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+/*
+ * WP Classes
+ */
+.wp-caption{
+  border: 2px solid $gronn;
+  padding: 10px;
+  text-align: center;
+  margin-top: 0;
+}
+.alignright{
+  float: right;
+}
+.alignleft{
+  float: left;
+}

@@ -1,0 +1,40 @@
+{
+    "key": "group_58a755c6a0989",
+    "title": "Podcast (CPT)",
+    "fields": [
+        {
+            "default_value": "",
+            "placeholder": "",
+            "key": "field_58a755c6a57fe",
+            "label": "Youtube lenke",
+            "name": "youtube_lenke",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "podcast"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1487361556
+}

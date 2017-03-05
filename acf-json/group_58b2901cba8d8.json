@@ -1,0 +1,175 @@
+{
+    "key": "group_58b2901cba8d8",
+    "title": "Arrangement (CPT)",
+    "fields": [
+        {
+            "key": "field_58b29beb96d7b",
+            "label": "Sted",
+            "name": "sted",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b29c1696d7c",
+            "label": "Tidspunkt",
+            "name": "tidspunkt",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d. M Y H:i",
+            "return_format": "c",
+            "first_day": 1
+        },
+        {
+            "key": "field_58b29c2d96d7d",
+            "label": "Pris Delta",
+            "name": "pris_delta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b29c3996d7e",
+            "label": "Pris Andre",
+            "name": "pris_andre",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b29c3f96d7f",
+            "label": "Kleskode",
+            "name": "kleskode",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b29c4c96d80",
+            "label": "P\u00e5meldte",
+            "name": "pameldte",
+            "type": "user",
+            "instructions": "Skal ikke fylles ut med mindre dere skal melde p\u00e5 noen manuelt. Denne oppdateres manuelt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 1,
+            "multiple": 1
+        },
+        {
+            "key": "field_58b29c5396d81",
+            "label": "Betalte",
+            "name": "betalte",
+            "type": "user",
+            "instructions": "Flytt de p\u00e5meldte hit n\u00e5r de har betalt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 1,
+            "multiple": 1
+        },
+        {
+            "key": "field_58b29c9d96d82",
+            "label": "Minibilde",
+            "name": "minibilde",
+            "type": "image",
+            "instructions": "Dette er et alternativt bilde som vises i stedet for fremhevet bilde p\u00e5 arkivsidene.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "arrangement"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1488103781
+}

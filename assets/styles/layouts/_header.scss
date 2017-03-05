@@ -1,0 +1,358 @@
+.topptekst{
+  &__holder{
+    @extend .holder;
+  }
+  &__logo{
+    display: flex;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+      align-items: center;
+    @media(min-width: $mobil){
+      align-items: flex-end;
+    }
+    &__holder{
+      position: relative;
+      padding: 20px;
+      background: #fff;
+      z-index: 300;
+    }
+    &:hover, &:active, &:focus{
+      .topptekst__logo{
+        &__svg{
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__svg{
+      transition: .3s all ease-in-out;
+    }
+    &__tekst{
+      font-family: "Arial", sans-serif;
+      margin-left: 20px;
+      h1{
+        margin-bottom: 10px;
+        font-size: 28px;
+        @media (min-width: $mobil){
+          font-size: 32px;
+        }
+      }
+      h2{
+        margin-bottom: 0;
+        font-size: 16px;
+        margin-top: 0;
+        @media (min-width: $mobil){
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  &__navigasjon{
+    background: $gronn;
+    color: #fff;
+    position: relative;
+    z-index: 250;
+    @media (max-width: $mobil){
+      display: none;
+    }
+    .relativ{
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+    }
+    &--full{
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparentize($gronn, .2);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .topptekst__holder{
+        ul{
+          display: block;
+          li{
+            display: block;
+            text-align: center;
+            /*
+            &.hoyrelenke{
+              display: none;
+            }*/
+          }
+        }
+      }
+      .topptekst{
+        &__login,
+        &__handlekurv{
+          display: none;
+        }
+
+      }
+    }
+    &__lukk{
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      background: transparent;
+      font-size: 24px;
+      border: none;
+      @extend .fa;
+      @extend .fa-times;
+      cursor: pointer;
+      @media (min-width: $mobil){
+        display: none;
+      }
+    }
+    &__logo{
+      display: inline-block;
+      transition: .3s all ease-in-out;
+      width: auto;
+      height: auto;
+      vertical-align: middle;
+      overflow: hidden;
+      box-sizing: border-box;
+      max-width: 0;
+      svg{
+        height: 100%;
+        width: auto;
+        max-height: 25px;
+        vertical-align: middle;
+        display: inline-block;
+      }
+      p, g{
+        fill: #fff;
+      }
+    }
+    &--topp{
+      position: fixed; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      .admin-bar &{
+        top: 32px;
+      }
+      .topptekst__navigasjon{
+        &__logo{
+          width: auto;
+          height: 100%;
+          padding: 0 10px;
+          max-width: 55px;
+        }
+      }
+    }
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      li{
+        display: inline-block;
+        @media screen and (min-width: $mobil){
+          &.hoyrelenke{
+            float: right;
+          }
+        }
+      }
+      a{
+        color: #fff;
+        padding: 10px 15px;
+        display: block;
+        transition: .3s all ease-in-out;
+        text-decoration: none;
+        font-size: 18px;
+        &:hover, &:active, &:focus{
+          background: $lys;
+        }
+        &.bruker{
+          @extend .fa;
+          @extend .fa-user;
+          font-size: 21px;
+          span{
+            display: none;
+          }
+        }
+        &.kurv{
+          @extend .fa;
+          @extend .fa-shopping-cart;
+          font-size: 21px;
+          span{
+            display: none;
+          }/*
+          .teller{
+            display: inline-block;
+            position: absolute;
+            top: 15px;
+            margin-left: 8px;
+            font-size: 8px;
+            color: #000;
+            font-family: "Arial";
+          }*/
+        }
+      }
+    }
+  }
+  &__handlekurv{
+    background: $gronn;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    z-index: 150;
+    color: #fff;
+    transition: .3s all ease-in-out;
+    top: 0;
+    transform: translate(0, -100%);
+    &.aktiv{
+      top: 100%;
+      transform: translate(0,0);
+    }
+    h3{
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    table,
+    table.shop_table{
+      border: none;
+      thead{
+        tr{
+          border-bottom: 1px solid #fff;
+        }
+      }
+      tr.produktrad{
+        border-bottom: 1px solid #fff;
+      }
+      th{
+        padding: 9px 17px;
+        text-align: left;
+      }
+      td{
+        padding: 6px 12px;
+        vertical-align: middle;
+        &.antall{
+          min-width: 80px;
+        }
+      }
+      .actions{
+        text-align: right;
+        a{
+          @extend .knapp-invers;
+        }
+      }
+      input[type="text"]{
+        padding: 9px 10px;
+        border: none;
+        font-size: 16px;
+        margin-right: 10px;
+        width: 100px;
+      }
+      input[type="submit"]{
+        @extend .knapp-invers;
+        float: right;
+      }
+    }
+  }
+  &__login{
+    background: $gronn;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    z-index: 150;
+    color: #fff;
+    transition: .3s all ease-in-out;
+    top: 0;
+    transform: translate(0, -100%);
+    &.aktiv{
+      top: 100%;
+      transform: translate(0,0);
+    }
+    h3{
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    &__felt{
+      margin-bottom: 10px;
+      label{
+        display: none;
+      }
+      input{
+        padding: 5px 10px;
+        border: 1px solid $gronn;
+        font-size: 16px;
+        min-width: 200px;
+      }
+    }
+    &__knapp{
+      text-align: right;
+      margin-top: 20px;
+      a{
+        @extend .knapp-invers;
+        padding: 5px 10px;
+        font-size: 14px;
+        float: left;
+      }
+      input[type="submit"]{
+        @extend .knapp-invers;
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.brukernavigasjon{
+  ul{
+    padding-left: 20px;
+    li{
+      display: list-item;
+      list-style: disc;
+      margin-bottom: 5px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      a{
+        padding: 0;
+        font-size: 16px;
+        &:hover{
+          text-decoration: underline;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+.mobilmeny{
+  width: 80px;
+  height: 80px;
+  display: block;
+  border: none;
+  background: $gronn;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 40px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0px 1px 3px 1px rgba(0,0,0,.5);
+  z-index: 500;
+  &:focus,
+  &:active{
+    outline: none;
+  }
+  svg{
+    max-width: 90%;
+    height: auto;
+  }
+}
+@media (min-width: $mobil){
+  .mobilmeny{
+    display: none;
+  }
+}

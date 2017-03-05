@@ -1,0 +1,44 @@
+<footer class="bunntekst">
+  <div class="mazemap">
+  <div class="mazemap__scrollstop"></div>
+    <iframe width="600" height="420" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://use.mazemap.com/embed.html?v=1&amp;campusid=1&amp;left=10.4044&amp;right=10.4054&amp;top=63.4158&amp;bottom=63.4154&amp;sharepoitype=poi&amp;sharepoi=7591&amp;utm_medium=iframe" scrolling="no"></iframe>
+  </div>
+  <div class="bunntekst__holder">
+    <div class="bunntekst__enkel">
+      <!-- tre bokser instagram -->
+      {!! do_shortcode('[instagram-feed]') !!}
+    </div>
+    <div class="bunntekst__enkel">
+      <!-- Informasjon -->
+      <h3>Informasjon</h3>
+      <p>Mail styret: <a href="mailto:delta@list.stud.ntnu.no">Delta@list.stud.ntnu.no</a><br>
+      Post: NV-Fakultetet, Realfagsbygget<br>
+      Høgskoleringgen 5, 7491 Trondheim</p>
+      <div class="bunntekst__sosialt">
+        <a href="https://www.facebook.com/DeltaNTNU/" class="facebook"><span>Facebook</span></a>
+        <a href="https://twitter.com/DeltaNTNU" class="twitter"><span>Twitter</span></a>
+        <a href="https://www.instagram.com/linjeforeningendelta/" class="instagram"><span>Instagram</span></a>
+        <a href="https://www.youtube.com/channel/UC9qc2CyTJWHRa1dwPWOjtwA" class="youtube"><span>Youtube</span></a>
+      </div>
+    </div>
+    <div class="bunntekst__enkel">
+      <!-- Nyhetsbrev -->
+      <form action="http://list.stud.ntnu.no/mailman/subscribe/deltanews" method="post">
+        <h3>Nyhetsbrev</h3>
+        <label for="email">E-post</label>
+        <input type="text" name="email" size="30" value="" autocomplete="off" placeholder="E-post">
+
+        <label for="fullname">Navn</label>
+        <input type="text" name="fullname" size="30" value="" placeholder="Navn">
+        <input type="hidden" name="digest" value="0">
+        <input type="hidden" name="language" value="no">
+        <input type="submit" name="Submit" value="Meld på">
+      </form>
+    </div>
+  </div>
+  <div class="bunntekst__holder">
+    <div class="bunntekst__copy">
+      Linjeforeningen Delta
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+{
+    "key": "group_5895ed3a3d6c5",
+    "title": "Standardmal (Mal)",
+    "fields": [
+        {
+            "default_value": 0,
+            "message": "Gr\u00f8nn bakgrunnsfarge bak innholdet",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_5895ed473cbef",
+            "label": "gr\u00f8nn bakgrunnsfarge",
+            "name": "gronn",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1487361550
+}

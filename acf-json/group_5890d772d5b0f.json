@@ -1,0 +1,170 @@
+{
+    "key": "group_5890d772d5b0f",
+    "title": "Bedpresser (CPT)",
+    "fields": [
+        {
+            "key": "field_5890d77ddde85",
+            "label": "Tidspunkt",
+            "name": "tidspunkt",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d. M Y H:i",
+            "return_format": "c",
+            "first_day": 1
+        },
+        {
+            "key": "field_5890d7dadde86",
+            "label": "Sted",
+            "name": "sted",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5890d7e2dde87",
+            "label": "Sted Lenke",
+            "name": "sted_lenke",
+            "type": "text",
+            "instructions": "(Mazemap)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5890d812dde88",
+            "label": "Tilgjengelige plasser",
+            "name": "tilgjengelige_plasser",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5890d86045679",
+            "label": "\u00c5pent for",
+            "name": "apent_for",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "matematikk": "Matematikk",
+                "fysikk": "Fysikk"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58920bf11ac45",
+            "label": "Trinn",
+            "name": "trinn",
+            "type": "select",
+            "instructions": "Hvilke trinn er det \u00e5pent for?\r\n(eks 1. til 5. klasse)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1.": "1. klasse",
+                "2.": "2. klasse",
+                "3.": "3. klasse",
+                "4.": "4. klasse",
+                "5.": "5. klasse"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b13e5fba86e",
+            "label": "P\u00e5meldte",
+            "name": "pameldte",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 1,
+            "multiple": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "bedpress"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1488040949
+}
