@@ -150,6 +150,9 @@ class Arrangement{
   public function erMed($liste = false){
     if(!$liste)
       $liste = $this->pameldte;
+    return $this->iListe($liste);
+  }
+  public function iListe($liste){
     if(! is_array($liste))
       return false;
     foreach($liste as $bruker){
@@ -157,6 +160,9 @@ class Arrangement{
         return true;
     }
     return false;
+  }
+  public function harBetalt(){
+    return $this->iListe($this->betalte);
   }
   public function hentDato(){
     return date_i18n('d. F Y',strtotime(get_field('tidspunkt')));
@@ -170,6 +176,9 @@ class Arrangement{
   public function printPris(){
     return $this->pris_delta . ',- &nbsp; // ' . $this->pris_andre . ',-';
   }
+  public function hentPris(){
+    return number_format($this->pris_delta, 2, '.', '');
+  }
   public function tellPameldte(){
     return is_array($this->pameldte) ? count($this->pameldte) : 0;
   }
@@ -182,6 +191,13 @@ class Arrangement{
     if(!$post_id)
       $post_id = $this->post_id;
       ACFUpdater::leggTil('pameldte', $bruker_id, $post_id);
+  }
+  private function betal($bruker_id = false, $post_id = false){
+    if(!$bruker_id)
+      $bruker_id = $this->bruker_id;
+    if(!$post_id)
+      $post_id = $this->post_id;
+      ACFUpdater::leggTil('betalte', $bruker_id, $post_id);
   }
   private static function meld_av($bruker_id = false, $post_id = false){
     if(!$bruker_id)
@@ -206,6 +222,9 @@ class Arrangement{
       case "meld_av":
         $this->meldAv($_POST['bruker'], $_POST['arrkom']);
         break;
+      case "betalt":
+        $this->betal($_POST['bruker'], $_POST['arrkom']);
+        break;
     }
   }
   public function settStatus(){
@@ -218,7 +237,7 @@ class Arrangement{
       }
     }else{
       // Det koster penger, her er det de betalte som gjelder
-      if($this->erMed($this->betalte)){
+      if($this->harBetalt()){
         $this->status = "Du er meldt på og din betaling er registrert!";
       }else if($this->erMed($this->pameldte)){
         $this->status = "Du er meldt på men din betaling er ikke registrert enda";

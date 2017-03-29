@@ -14,8 +14,11 @@ use Roots\Sage\Template\BladeProvider;
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_style('mazemap.css', 'https://api.mazemap.com/js/v1.2.9/mazemap.min.css', false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    wp_enqueue_script('sage/main.js', 'https://api.mazemap.com/js/v1.2.9/mazemap.min.js', [], null, false);
+    wp_enqueue_script('paypal/checkout.js', 'https://www.paypalobjects.com/api/checkout.js', [], null, false);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery', 'paypal/checkout.js'], null, true);
+    wp_enqueue_script('sage/mazemap.js', 'https://api.mazemap.com/js/v1.2.9/mazemap.min.js', [], null, false);
+
+
 }, 100);
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_style('font-awesome');

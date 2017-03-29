@@ -43,7 +43,85 @@
         @if( ! is_user_logged_in())
           <a href="{{ get_permalink( woocommerce_get_page_id( 'myaccount' ) ) }}" class="showlogin">Logg inn</a>
         @elseif($arrangement->erMed())
-          <button disabled="disabled">Allerede påmeldt</button>
+          @if($arrangement->harBetalt())
+          <button disabled="disabled">Allerede betalt</button>
+          @else
+          <div id="betalingsknapp"></div>
+          <script>
+          function post(path, params, method) {
+            method = method || "post"; // Set method to post by default if not specified.
+
+            // The rest of this code assumes you are not using a library.
+            // It can be made less wordy if you use one.
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            if(path){
+              form.setAttribute("action", path);
+            }
+
+            for(var key in params) {
+              if(params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+
+                form.appendChild(hiddenField);
+               }
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+            }
+            paypal.Button.render({
+            
+              client: {
+                production:  'AbmyMXjLtxLmzXh-QlRsBAG9BEIoSyFlsQhkgV0PRKM8-vD59ibx0JMO5JeRA8vAQbLnjMTTMFG4Ql3e',
+              },
+              locale: 'no_NO',
+              style: {
+                color: 'silver',
+                size: 'responsive',
+                shape: 'rect'
+              },
+
+              payment: function() {
+              
+                var env    = this.props.env;
+                var client = this.props.client;
+            
+                return paypal.rest.payment.create(env, client, {
+                  transactions: [
+                    {
+                      amount: { total: '{{$arrangement->hentPris()}}', currency: 'NOK' },
+                      description: "Betaling for arrangement: {{get_the_title()}}"
+                    }
+                  ]
+                },{
+                  input_fields: {
+                    no_shipping: 1
+                  },
+                  presentation: {
+                    brand_name: "Linjeforeningen Delta"
+                  }
+
+                });
+              },
+              commit: true,
+
+              onAuthorize: function(data, actions) {
+              
+                // Optional: display a confirmation page here
+                
+                return actions.payment.execute().then(function() {
+                  console.log("Data: ",data,actions);
+                  // Payment complete, post user to server
+                  post('',{handling: 'betalt', bruker: {{get_current_user_id()}}, arrkom: {{get_the_id()}} });
+                });
+              }
+            }, '#betalingsknapp');
+          </script>
+          @endif
         @elseif($arrangement->kanBliMed())
           <form method="post">
             <input type="submit" value="Meld meg på">
