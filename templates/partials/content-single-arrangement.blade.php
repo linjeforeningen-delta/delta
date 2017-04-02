@@ -36,9 +36,10 @@
       <div class="infoboks__kleskode">
         <span>{{ $arrangement->kleskode }}</span>
       </div>
+      <!--
       <div class="infoboks__teller">
         <span>{{ $arrangement->tellPameldte() }} påmeldte</span>
-      </div>
+      </div> -->
       <div class="infoboks__knapp">
         @if( ! is_user_logged_in())
           <a href="{{ get_permalink( woocommerce_get_page_id( 'myaccount' ) ) }}" class="showlogin">Logg inn</a>
