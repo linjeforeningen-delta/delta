@@ -130,6 +130,7 @@ class Arrangement{
   public $bruker_id;
   public $post_id;
   public $status;
+  public $vis_pameldte;
   function __construct($post_id){
     $this->post_id = $post_id;
     $this->bruker_id = get_current_user_ID();
@@ -146,6 +147,7 @@ class Arrangement{
     $this->kleskode = get_field('kleskode', $post_id);
     $this->pris_delta = get_field('pris_delta', $post_id);
     $this->pris_andre = get_field('pris_andre', $post_id);
+    $this->vis_pameldte = get_field('vis_pameldte', $post_id);
   }
   public function erMed($liste = false){
     if(!$liste)
@@ -178,6 +180,9 @@ class Arrangement{
   }
   public function hentPris(){
     return number_format($this->pris_delta, 2, '.', '');
+  }
+  public function visPameldte(){
+    return $this->vis_pameldte;
   }
   public function tellPameldte(){
     return is_array($this->pameldte) ? count($this->pameldte) : 0;
