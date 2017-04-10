@@ -400,7 +400,7 @@ function arrangementer_cpt() {
     'archives'              => __( 'Arrangementarkiv', 'delta' ),
     'attributes'            => __( 'Arrangementattributter', 'delta' ),
     'parent_item_colon'     => __( 'Foreldrearrangement', 'delta' ),
-    'all_items'             => __( 'Alle arrengement', 'delta' ),
+    'all_items'             => __( 'Alle arrangementer', 'delta' ),
     'add_new_item'          => __( 'Legg til nytt arrangement', 'delta' ),
     'add_new'               => __( 'Legg til ny', 'delta' ),
     'new_item'              => __( 'Nytt arrangement', 'delta' ),
