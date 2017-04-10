@@ -56,13 +56,13 @@ function wooc_extra_register_fields() {
     ?>
 
     <p class="form-row form-row-first">
-    <label for="reg_account_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="input-text" name="account_first_name" id="reg_account_first_name" value="<?php if ( ! empty( $_POST['account_first_name'] ) ) esc_attr_e( $_POST['account_first_name'] ); ?>" />
+    <label for="fornavn"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
+    <input type="text" class="input-text" name="fornavn" id="fornavn" value="<?php if ( ! empty( $_POST['fornavn'] ) ) esc_attr_e( $_POST['fornavn'] ); ?>" />
     </p>
 
     <p class="form-row form-row-last">
-    <label for="reg_account_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
-    <input type="text" class="input-text" name="account_last_name" id="reg_account_last_name" value="<?php if ( ! empty( $_POST['account_last_name'] ) ) esc_attr_e( $_POST['account_last_name'] ); ?>" />
+    <label for="etternavn"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
+    <input type="text" class="input-text" name="etternavn" id="etternavn" value="<?php if ( ! empty( $_POST['etternavn'] ) ) esc_attr_e( $_POST['etternavn'] ); ?>" />
     </p>
 
     <div class="clear"></div>
@@ -90,6 +90,7 @@ function wooc_validate_extra_register_fields( $errors, $username, $email ) {
     if ( isset( $_POST['kull'] ) && empty( $_POST['kull'] ) ) {
         $errors->add( 'kull_error', __( '<strong>Error</strong>: Kull er påkrevd.', 'woocommerce' ) );
     }
+
     if ( isset( $_POST['studieretning'] ) && (empty( $_POST['studieretning'] ) || !in_array($_POST['studieretning'], ['matematikk', 'fysikk', 'annet'])) ) {
         $errors->add( 'studieretning_error', __( '<strong>Error</strong>: Studieretning er påkrevd.', 'woocommerce' ) );
     }
@@ -99,6 +100,12 @@ add_filter( 'woocommerce_registration_errors', 'wooc_validate_extra_register_fie
 
 
 function wooc_save_extra_register_fields( $customer_id ) {
+    if( isset( $_POST['fornavn'] ) ){
+        update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['kull'] ) );
+    }
+    if( isset( $_POST['etternavn'] ) ){
+        update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['kull'] ) );
+    }
     if ( isset( $_POST['kull'] ) ) {
         // WordPress default first name field.
         update_user_meta( $customer_id, 'kull', sanitize_text_field( $_POST['kull'] ) );
@@ -112,7 +119,7 @@ add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
 
 function fb_add_custom_user_profile_fields( $user ) {
 ?>
-  <h3><?php _e('Delta profilinformasjon', 'your_textdomain'); ?></h3>
+  <h3><?php _e('Delta profilinformasjon', 'delta'); ?></h3>
   
   <table class="form-table">
     <tr>
