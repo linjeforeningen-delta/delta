@@ -101,10 +101,10 @@ add_filter( 'woocommerce_registration_errors', 'wooc_validate_extra_register_fie
 
 function wooc_save_extra_register_fields( $customer_id ) {
     if( isset( $_POST['fornavn'] ) ){
-        update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['kull'] ) );
+        update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['fornavn'] ) );
     }
     if( isset( $_POST['etternavn'] ) ){
-        update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['kull'] ) );
+        update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['etternavn'] ) );
     }
     if ( isset( $_POST['kull'] ) ) {
         // WordPress default first name field.
