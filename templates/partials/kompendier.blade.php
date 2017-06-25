@@ -8,6 +8,7 @@
             'terms'     => 'kompendier'
         )
     )];
+    do_action( 'posts_selection' );
     if(is_product()){
       $args['post__not_in'] = array(get_the_ID());
     }else if(is_product_category()){

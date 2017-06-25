@@ -4,6 +4,14 @@
   @if(have_posts()) <?php the_post(); ?>
   <div class="seksjon seksjon--bg" style="background-image: url( {{ the_post_thumbnail_url( 'full' ) }} )">
   </div>
+  
+  @if(get_field('banner'))
+  <div class="seksjon seksjon--gronn">
+    <div class="seksjon__holder seksjon--banner">
+      <?php the_field('banner'); ?>
+    </div>
+  </div>
+  @endif
 <?php
     $args = ['post_type' => 'bedpress', 
             'posts_per_page' => 3,
