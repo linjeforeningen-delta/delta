@@ -289,3 +289,12 @@ function wc_delta_remove_password_strength() {
   }
 }
 add_action( 'wp_print_scripts', 'wc_delta_remove_password_strength', 100 );
+
+
+function rewrite_trykkfeil() {
+  if($_SERVER['REQUEST_URI'] == '/faglig/trykkfeil-kompendium/'){
+    wp_redirect( '/trykkfeil/', 301 );
+    exit;
+  }
+}
+add_action('init', 'rewrite_trykkfeil');
