@@ -17,12 +17,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('paypal/checkout.js', 'https://www.paypalobjects.com/api/checkout.js', [], null, false);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery', 'paypal/checkout.js'], null, true);
     wp_enqueue_script('sage/mazemap.js', 'https://api.mazemap.com/js/v1.2.9/mazemap.min.js', [], null, false);
-
-
 }, 100);
 add_action('wp_enqueue_scripts', function () {
-    wp_deregister_style('font-awesome');
-    wp_deregister_style('font-awesome-css');
+    wp_dequeue_style('font-awesome');
+    wp_dequeue_style('font-awesome-css');
 }, 1000);
 
 if( function_exists('acf_add_options_page') ) {
