@@ -38,7 +38,12 @@
       </div>
       @if($arrangement->visPameldte())
       <div class="infoboks__teller">
+        @if($arrangement->tilgjengelige_plasser > 0)
+        <span>{{ $arrangement->tellPameldte() }} av {{ $arrangement->tilgjengelige_plasser }} påmeldte</span>
+        <progress max="{{ $arrangement->tilgjengelige_plasser }}" value="{{ $arrangement->tellPameldte() }}"></progress>
+        @else
         <span>{{ $arrangement->tellPameldte() }} påmeldte</span>
+        @endif
       </div>
       @endif
       <div class="infoboks__knapp">

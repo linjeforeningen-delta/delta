@@ -97,7 +97,7 @@
         },
         {
             "key": "field_58ebc7804afbb",
-            "label": "Vis P\u00e5meldte",
+            "label": "Vis Påmeldte",
             "name": "vis_pameldte",
             "type": "true_false",
             "instructions": "",
@@ -108,18 +108,39 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Vis felt med antall p\u00e5meldte",
+            "message": "Vis felt med antall påmeldte",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
         },
         {
+            "key": "field_599444d1e79e1",
+            "label": "Tilgjengelige plasser",
+            "name": "tilgjengelige_plasser",
+            "type": "number",
+            "instructions": "Vises bare hvis ikke lik null",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_58b29c4c96d80",
-            "label": "P\u00e5meldte",
+            "label": "Påmeldte",
             "name": "pameldte",
             "type": "user",
-            "instructions": "Skal ikke fylles ut med mindre dere skal melde p\u00e5 noen manuelt. Denne oppdateres manuelt.",
+            "instructions": "Skal ikke fylles ut med mindre dere skal melde på noen manuelt. Denne oppdateres manuelt.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -136,7 +157,7 @@
             "label": "Betalte",
             "name": "betalte",
             "type": "user",
-            "instructions": "Flytt de p\u00e5meldte hit n\u00e5r de har betalt.",
+            "instructions": "Flytt de påmeldte hit når de har betalt.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -153,7 +174,7 @@
             "label": "Minibilde",
             "name": "minibilde",
             "type": "image",
-            "instructions": "Dette er et alternativt bilde som vises i stedet for fremhevet bilde p\u00e5 arkivsidene.",
+            "instructions": "Dette er et alternativt bilde som vises i stedet for fremhevet bilde på arkivsidene.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -190,5 +211,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1491847066
+    "modified": 1502889252
 }

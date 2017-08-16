@@ -131,6 +131,7 @@ class Arrangement{
   public $post_id;
   public $status;
   public $vis_pameldte;
+  public $tilgjengelige_plasser;
   function __construct($post_id){
     $this->post_id = $post_id;
     $this->bruker_id = get_current_user_ID();
@@ -148,6 +149,7 @@ class Arrangement{
     $this->pris_delta = get_field('pris_delta', $post_id);
     $this->pris_andre = get_field('pris_andre', $post_id);
     $this->vis_pameldte = get_field('vis_pameldte', $post_id);
+    $this->tilgjengelige_plasser = get_field('tilgjengelige_plasser', $post_id);
   }
   public function erMed($liste = false){
     if(!$liste)
