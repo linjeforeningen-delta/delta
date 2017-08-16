@@ -23,7 +23,8 @@ a{
   position: relative;
   cursor: pointer;
 }
-.knapp{
+.knapp,
+.tekst .knapp{
   @extend .knapp-standard;
   color: #fff;
   background: $gronn;
@@ -33,7 +34,8 @@ a{
     color: $gronn;
   }
 }
-.knapp-invers{
+.knapp-invers,
+.tekst .knapp-invers{
   @extend .knapp-standard;
   color: $gronn;
   background: #fff;
