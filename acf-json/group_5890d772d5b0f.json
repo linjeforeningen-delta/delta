@@ -80,7 +80,7 @@
         },
         {
             "key": "field_5890d86045679",
-            "label": "\u00c5pent for",
+            "label": "Åpent for",
             "name": "apent_for",
             "type": "select",
             "instructions": "",
@@ -109,7 +109,7 @@
             "label": "Trinn",
             "name": "trinn",
             "type": "select",
-            "instructions": "Hvilke trinn er det \u00e5pent for?\r\n(eks 1. til 5. klasse)",
+            "instructions": "Hvilke trinn er det åpent for?\r\n(eks 1. til 5. klasse)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -134,7 +134,7 @@
         },
         {
             "key": "field_58b13e5fba86e",
-            "label": "P\u00e5meldte",
+            "label": "Påmeldte",
             "name": "pameldte",
             "type": "user",
             "instructions": "",
@@ -167,6 +167,44 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_59982b6b420a0",
+            "label": "Tittel",
+            "name": "tittel",
+            "type": "text",
+            "instructions": "Overskriver \"Bedriftspresentasjon\" eller \"Presentasjon\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59982b7d420a1",
+            "label": "Skjul Sideboks",
+            "name": "skjul_sideboks",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Huk av for å skjule den grønne sideboksen",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -186,5 +224,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488730482
+    "modified": 1503144868
 }

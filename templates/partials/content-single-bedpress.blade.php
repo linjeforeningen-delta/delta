@@ -9,6 +9,7 @@
     {{ $bedpress->status }}
   </div>
 @endif
+  @if( ! get_field('skjul_sideboks'))
   <aside class="sideboks">
     {!! the_post_thumbnail( null, 'full' ) !!}
     <div class="infoboks">
@@ -72,10 +73,13 @@
       </div>
     </div>
   </aside>
+  @endif
   <header>
     <hgroup>
       <h1>{{ get_the_title() }}</h1>
-      @if(get_field('er_bedpress'))
+      @if(get_field('tittel'))
+        <h2>{{ get_field('tittel') }}</h2>
+      @elseif(get_field('er_bedpress'))
         <h2>Bedriftspresentasjon</h2>
       @else
         <h2>Presentasjon</h2>
@@ -91,9 +95,11 @@
 </article>
 </div>
 </div>
+@if(get_field('sted_lenke'))
 <div class="seksjon seksjon--gronn bedpress__kart">
-<div class="seksjon__holder">
-  <h1>Sted for bedpress</h1>
-  {!! get_field('sted_lenke') !!}
+  <div class="seksjon__holder">
+    <h1>Sted for bedpress</h1>
+    {!! get_field('sted_lenke') !!}
+  </div>
 </div>
-</div>
+@endif
