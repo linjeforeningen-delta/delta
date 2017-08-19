@@ -27,7 +27,7 @@
   @if($bedpresser->have_posts())
   <div class="seksjon seksjon--gronn">
     <div class="seksjon__holder">
-      <h1>Bedrifts- og forskningspresentasjoner</h1>
+      <h1>{{ the_field('bedkom_tittel', 'option') }}</h1>
       <div class="bedriftspresentasjoner">
         @while ($bedpresser->have_posts()) <?php $bedpresser->the_post(); ?>
           @include ('partials.content-bedpress')
