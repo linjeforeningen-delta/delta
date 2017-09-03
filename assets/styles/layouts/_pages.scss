@@ -352,36 +352,20 @@
   a{
     position: relative;
     display: block;
-    &::before{
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 50;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      transition: .3s all ease-in-out;
-    }
     &:hover, &:focus, &:active{
-      &::before{
-        background: rgba(0,82,0,.3)
+      span{
+        text-decoration: underline;
       }
     }
   }
   @media screen and (min-width: $mobil){
     display: flex;
-    flex-wrap: no-wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     > div{
       margin: 0 15px 20px;
-      &:first-child{
-        margin-left: 0;
-      }
-      &:last-child{
-        margin-right: 0;
-      }
+      width: 20%;
+      width: calc(20% - 30px);
     }
   }
 }
