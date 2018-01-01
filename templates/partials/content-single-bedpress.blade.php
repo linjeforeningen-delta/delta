@@ -1,5 +1,5 @@
 <?php
-  $bedpress = new Bedpress(get_the_id());
+  $bedpress = new Delta\Bedpress(get_the_id());
 ?>
 <div class="seksjon {{ $bedpress->status? 'seksjon--infofelt' : ''}}">
 <div class="seksjon__holder">

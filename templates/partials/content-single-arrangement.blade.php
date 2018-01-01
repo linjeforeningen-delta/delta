@@ -1,4 +1,4 @@
-<?php $arrangement = new Arrangement(get_the_ID()); ?>
+<?php $arrangement = new Delta\Arrangement(get_the_ID()); ?>
 <div class="seksjon seksjon--bilde">
   {!! get_the_post_thumbnail( null, 'full' ) !!}
 </div>

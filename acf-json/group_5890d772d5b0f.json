@@ -3,6 +3,44 @@
     "title": "Bedpresser (CPT)",
     "fields": [
         {
+            "key": "field_59982b6b420a0",
+            "label": "Tittel",
+            "name": "tittel",
+            "type": "text",
+            "instructions": "Overskriver \"Bedriftspresentasjon\" eller \"Presentasjon\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58bc39676126e",
+            "label": "Er bedpress",
+            "name": "er_bedpress",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5890d77ddde85",
             "label": "Tidspunkt",
             "name": "tidspunkt",
@@ -10,6 +48,31 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d. M Y H:i",
+            "return_format": "c",
+            "first_day": 1
+        },
+        {
+            "key": "field_5a4a6051dbaef",
+            "label": "Påmelding starter",
+            "name": "pamelding_starter",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58bc39676126e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -58,6 +121,110 @@
             "append": ""
         },
         {
+            "key": "field_5a4a6087dbaf0",
+            "label": "Påmeldingsinndeling",
+            "name": "pameldingsinndeling",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58bc39676126e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Legg til inndeling",
+            "sub_fields": [
+                {
+                    "key": "field_5a4a60badbaf1",
+                    "label": "Åpent for",
+                    "name": "apent_for",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "matematikk": "Matematikk",
+                        "fysikk": "Fysikk",
+                        "andre": "Andre"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5a4a60e7dbaf2",
+                    "label": "Trinn",
+                    "name": "trinn",
+                    "type": "select",
+                    "instructions": "Hvilke trinn er det åpent for?\r\n(eks 1. til 5. klasse)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "1.": "1. klasse",
+                        "2.": "2. klasse",
+                        "3.": "3. klasse",
+                        "4.": "4. klasse",
+                        "5.": "5. klasse"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5a4a610fdbaf3",
+                    "label": "Siden start",
+                    "name": "siden_start",
+                    "type": "number",
+                    "instructions": "Antall timer etter påmeldingen starter når disse restriksjonenene skal gjelde.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
             "key": "field_5890d812dde88",
             "label": "Tilgjengelige plasser",
             "name": "tilgjengelige_plasser",
@@ -79,60 +246,6 @@
             "append": ""
         },
         {
-            "key": "field_5890d86045679",
-            "label": "Åpent for",
-            "name": "apent_for",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "matematikk": "Matematikk",
-                "fysikk": "Fysikk",
-                "andre": "Andre"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
-        },
-        {
-            "key": "field_58920bf11ac45",
-            "label": "Trinn",
-            "name": "trinn",
-            "type": "select",
-            "instructions": "Hvilke trinn er det åpent for?\r\n(eks 1. til 5. klasse)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "1.": "1. klasse",
-                "2.": "2. klasse",
-                "3.": "3. klasse",
-                "4.": "4. klasse",
-                "5.": "5. klasse"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
-        },
-        {
             "key": "field_58b13e5fba86e",
             "label": "Påmeldte",
             "name": "pameldte",
@@ -148,44 +261,6 @@
             "role": "",
             "allow_null": 1,
             "multiple": 1
-        },
-        {
-            "key": "field_58bc39676126e",
-            "label": "Er bedpress",
-            "name": "er_bedpress",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "message": "",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_59982b6b420a0",
-            "label": "Tittel",
-            "name": "tittel",
-            "type": "text",
-            "instructions": "Overskriver \"Bedriftspresentasjon\" eller \"Presentasjon\"",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_59982b7d420a1",
@@ -224,5 +299,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1503144868
+    "modified": 1514825629
 }
