@@ -171,6 +171,8 @@ class Bedpress{
   public function settStatus(){
     if($this->erMed()){
       $this->status = "Du er meldt på denne bedriftspresentasjonen!";
+    }elseif(! get_current_user_ID() == 0 ){
+      $this->status = "Logg inn for å sjekke når du kan melde deg på";
     }else{
       $timer = $this->narKanBliMed();
       if($timer === false){
