@@ -43,6 +43,27 @@
     </button>
   </nav>
 </header>
+<?php  $languages = apply_filters( 'wpml_active_languages', NULL, 'orderby=id&order=desc' ); ?>
+@if(!empty($languages))
+  <div class="language">
+    <?php $first = true; ?>
+    @foreach($languages as $language)
+      @if(! $first)
+        <span class="language__lang">{{__('|', 'anunatheme')}}</span>
+      @else
+        <?php $first = false; ?>
+      @endif
+
+      @if($language['active'])
+      <a href="{{ $language['url'] }}" class="language__lang language__lang--aktiv">
+      @else
+      <a href="{{ $language['url'] }}" class="language__lang">
+      @endif
+        {{ $language['language_code'] }}
+      </a>
+    @endforeach
+  </div>
+@endif
 @php(wc_print_notices() )
 
 <button class="mobilmeny">

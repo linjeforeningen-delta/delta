@@ -80,6 +80,7 @@ class Bedpress{
     return count($inndeling["apent_for"]) > 1;
   }
   public function iRiktigTrinn($arstrinn, $bruker){
+    error_log($this->getKlasse(get_the_author_meta('kull', $bruker)));
     $klasse = $this->getKlasse(get_the_author_meta('kull', $bruker));
     $riktigTrinn = false;
     foreach($arstrinn as $trinn){
