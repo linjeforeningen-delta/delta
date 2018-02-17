@@ -422,6 +422,12 @@
     align-items: baseline;
     flex-wrap: wrap;
   }
+  a{
+    display: block;
+    &:hover, &:focus{
+      outline:  none;
+    }
+  }
   img{
     display: block;
     height: auto;
