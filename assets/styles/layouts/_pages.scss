@@ -423,7 +423,7 @@
     flex-wrap: wrap;
   }
   a{
-    display: block;
+    display: flex;
     &:hover, &:focus{
       outline:  none;
     }

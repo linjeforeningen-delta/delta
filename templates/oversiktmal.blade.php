@@ -34,5 +34,31 @@
         </div>
       </div>
     </div>
+
+    @if(have_rows('skjulte_bokser') && Delta\bruker_har_tilgang('skjulte'))
+    <div class="seksjon">
+      <div class="seksjon__holder">
+        <hgroup>
+        @if( get_field('skjult_overskrift') )
+          <h1>{{ get_field('skjult_overskrift') }}</h1>
+        @endif
+        @if( get_field('skjult_underoverskrift'))
+          <h2>{{ get_field('skjult_underoverskrift') }}</h2>
+        @endif
+        </hgroup>
+        <div class="oversikt">
+        @while(have_rows('skjulte_bokser')) @php(the_row())
+          <a href="{{ get_sub_field('side') }}">
+            <div class="oversikt__ikon {{ get_sub_field('ikon') }}">
+            </div>
+            <div class="oversikt__tekst">
+              <h3>{{ get_sub_field('tekst') }}</h3>
+            </div>
+          </a>
+        @endwhile
+        </div>
+      </div>
+    </div>
+    @endif
   @endwhile
 @endsection

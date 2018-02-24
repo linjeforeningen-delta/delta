@@ -1,0 +1,23 @@
+.wikiside{
+	clear: both;
+	margin: 20px 0;
+	padding: 20px 0;
+  @media screen and (min-width: $mobil){
+  	margin: 40px 0;
+		&__bilde{
+			margin-right: 20px;
+			float: left;
+		}
+  }
+  &__bilde{
+  	margin-bottom: 20px;
+  }
+  &__tekst{
+  	> *{
+  		&:first-child{
+  			padding-top: 0;
+  			margin-top: 0;
+  		}
+  	}
+  }
+}
