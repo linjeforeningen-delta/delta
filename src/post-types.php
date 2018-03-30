@@ -9,7 +9,6 @@ function bedriftspresentasjoner_cpt() {
     'name_admin_bar'        => __( 'Bedpress', 'delta' ),
     'archives'              => __( 'Bedriftspresentasjoner', 'delta' ),
     'attributes'            => __( 'Bedpressegenskaper', 'delta' ),
-    'parent_item_colon'     => __( '', 'delta' ),
     'all_items'             => __( 'Alle bedpresser', 'delta' ),
     'add_new_item'          => __( 'Legg til ny bedpress', 'delta' ),
     'add_new'               => __( 'Legg til ny', 'delta' ),
@@ -453,3 +452,59 @@ function arrangementer_cpt() {
 
 }
 add_action( 'init', 'arrangementer_cpt', 0 );
+
+// Register Custom Post Type
+function cpt_komitesider() {
+
+    $labels = array(
+        'name'                  => _x( 'Komitesider', 'Post Type General Name', 'delta' ),
+        'singular_name'         => _x( 'Komiteside', 'Post Type Singular Name', 'delta' ),
+        'menu_name'             => __( 'Komitesider', 'delta' ),
+        'name_admin_bar'        => __( 'Komitesider', 'delta' ),
+        'archives'              => __( 'Komitesideoversikt', 'delta' ),
+        'attributes'            => __( 'Komitesideattributter', 'delta' ),
+        'parent_item_colon'     => __( 'Foreldreside', 'delta' ),
+        'all_items'             => __( 'Alle komitesider', 'delta' ),
+        'add_new_item'          => __( 'Legg til ny komiteside', 'delta' ),
+        'add_new'               => __( 'Legg til ny', 'delta' ),
+        'new_item'              => __( 'Ny komiteside', 'delta' ),
+        'edit_item'             => __( 'Rediger komiteside', 'delta' ),
+        'update_item'           => __( 'Oppdater komiteside', 'delta' ),
+        'view_item'             => __( 'Vis komiteside', 'delta' ),
+        'view_items'            => __( 'Vis komitesider', 'delta' ),
+        'search_items'          => __( 'Søk blant komitesider', 'delta' ),
+        'not_found'             => __( 'Ingen funnet', 'delta' ),
+        'not_found_in_trash'    => __( 'Ingen funnet i. papirkurven', 'delta' ),
+        'featured_image'        => __( 'Fremhevet bilde', 'delta' ),
+        'set_featured_image'    => __( 'Bestem fremhevet bilde', 'delta' ),
+        'remove_featured_image' => __( 'Fjern fremhevet bilde', 'delta' ),
+        'use_featured_image'    => __( 'Bruk som fremhevet bilde', 'delta' ),
+        'insert_into_item'      => __( 'Sett inn i post', 'delta' ),
+        'uploaded_to_this_item' => __( 'Lastet opp til denne siden', 'delta' ),
+        'items_list'            => __( 'Komitesideliste', 'delta' ),
+        'items_list_navigation' => __( 'Komitesidelistenavigasjon', 'delta' ),
+        'filter_items_list'     => __( 'Filtrer komitesideliste', 'delta' ),
+    );
+    $args = array(
+        'label'                 => __( 'Komiteside', 'delta' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor' ),
+        'hierarchical'          => true,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'menu_icon'             => 'dashicons-media-document',
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page',
+        'show_in_rest'          => false,
+    );
+    register_post_type( 'komiteside', $args );
+
+}
+add_action( 'init', 'cpt_komitesider', 0 );

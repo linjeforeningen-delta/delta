@@ -827,3 +827,27 @@
 .alignleft{
   float: left;
 }
+
+/*
+* Komiteside
+*/
+.komiteside{
+  &__felt{
+    clear: both;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 2px solid $gronn;
+    &::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  &__bilde{
+    @media (min-width: $mobil){
+      float: left;
+      padding-bottom: 20px;
+      padding-right: 20px;
+    }
+  }
+}
