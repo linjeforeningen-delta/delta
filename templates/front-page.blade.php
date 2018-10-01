@@ -19,7 +19,7 @@
             'meta_key' => 'tidspunkt',
             'meta_query' => [
               'key' => 'tidspunkt',
-              'value' => date('c'),
+              'value' => date('c') + 86400,
               'type' => 'DATE',
               'compare' => '>=']];
     $bedpresser = new WP_Query($args);
