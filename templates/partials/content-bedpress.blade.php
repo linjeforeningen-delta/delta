@@ -1,4 +1,4 @@
-@if (get_field('tidspunkt') >= date('c'))
+@if (get_field('tidspunkt') >= (date('c') - 86400))
 <article>
   <header>
     <div class="bedriftspresentasjoner__logo">
