@@ -1,4 +1,8 @@
 <footer class="bunntekst">
+  <div class="mazemap">
+    <iframe width="600" height="420" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://use.mazemap.com/embed.html?v=1&amp;campusid=1&amp;left=10.4044&amp;right=10.4054&amp;top=63.4158&amp;bottom=63.4154&amp;sharepoitype=poi&amp;sharepoi=7591&amp;utm_medium=iframe" scrolling="no"></iframe>
+  </div>
+
   <div class="bunntekst__holder">
     <div class="bunntekst__enkel">
       <!-- tre bokser instagram -->
