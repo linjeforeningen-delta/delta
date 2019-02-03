@@ -13,7 +13,7 @@
     "src/**/*.php"
   ],
   "publicPath": "/wp-content/themes/delta/",
-  "devUrl": "http://delta.dev",
+  "devUrl": "https://delta.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "browsers": [
