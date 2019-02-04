@@ -2,6 +2,14 @@
 
 @section('content')
   @if(have_posts()) <?php the_post(); ?>
+
+  @if(get_field('vis_realfagsdagene_banner'))
+    <div class="seksjon seksjon--rd">
+      {!! get_field('realfagsdagene_innhold') !!}
+    </div>
+  @endif
+
+
   <div class="seksjon seksjon--bg" style="background-image: url( {{ the_post_thumbnail_url( 'full' ) }} )">
   </div>
   

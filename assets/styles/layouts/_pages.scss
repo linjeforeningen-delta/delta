@@ -53,6 +53,40 @@
   &--gronn-topp{
     border-top: 2px solid $gronn;
   }
+
+  &--rd {
+    background: #141414;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    //font-family: "Arial Narrow", "Arial";
+    //font-weight: bold;
+    font-size: 32px;
+    font-smoothing: antialiased;
+
+    .rdbtn {
+      background: #bf331a;
+      display: inline-block;
+      margin: 20px auto;
+      color: #fff;
+      padding: 10px 20px;
+      line-height: 1.2em;
+
+      &:hover,
+      &:focus {
+        background: #fe7b52;
+
+      }
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   &--bg{
     background: 50% 50% no-repeat;
     background-size: cover;
