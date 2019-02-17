@@ -69,7 +69,7 @@
     "webpack-merge": "^2.4.0"
   },
   "dependencies": {
-    "jquery": "1.12.4 - 3",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "jquery": "1.12.4 - 3"
   }
 }
