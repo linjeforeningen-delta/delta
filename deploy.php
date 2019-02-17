@@ -25,11 +25,11 @@ host('ssh.domeneshop.no')
 
 // Tasks
 
-task('push', 'git checkout master && git push master master')->local();
+task('push', 'git checkout master && git push origin master')->local();
 
 task('pull', function() {
     cd('{{remote_path}}');
-    run('git pull master master');
+    run('git pull origin master');
 });
 
 // Build the files locally
