@@ -27,15 +27,9 @@
             <li class="hoyrelenke">
               <a href="{{ get_permalink( woocommerce_get_page_id( 'myaccount' ) ) }}" class="bruker"><span>Brukerinfo</span></a>
             </li>
-            <li class="hoyrelenke">
-              <a href="{{ get_permalink( woocommerce_get_page_id( 'cart' ) ) }}" class="kurv"><span>Handlekurv</span>
-                <span class="teller"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-              </a>
-            </li>
           </ul>
         @endif
         @include('partials.login')
-        @include('partials.cart')
       </div>
     </div>
     <button class="topptekst__navigasjon__lukk">

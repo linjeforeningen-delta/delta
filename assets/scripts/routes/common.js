@@ -38,18 +38,11 @@ export default {
     });
 
     var brukerpanel = document.querySelector('.topptekst__login');
-    var handlekurv = document.querySelector('.topptekst__handlekurv');
     var login = document.querySelector('.showlogin');
     document.querySelector(".topptekst__navigasjon .bruker").addEventListener('click', function(event) {
       if(window.innerWidth > scroller.mobilBredde){
         event.preventDefault();
         brukerpanel.classList.toggle('aktiv');
-      }
-    });
-    document.querySelector(".topptekst__navigasjon .kurv").addEventListener('click', function(event) {
-      if(window.innerWidth > scroller.mobilBredde){
-        event.preventDefault();
-        handlekurv.classList.toggle('aktiv');
       }
     });
     if(login){
